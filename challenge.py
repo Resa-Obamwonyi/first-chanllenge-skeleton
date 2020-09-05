@@ -7,6 +7,8 @@ After writing your tests, develop the counter function as needed to pass all you
 
 def counter(name):
     # Todo: implement me
-    return len(name)
-
+    if isinstance(name, str) and name.isalpha():
+        return len(name)
+    else:
+        raise TypeError("Name must be a single string with only alphabets")
 
