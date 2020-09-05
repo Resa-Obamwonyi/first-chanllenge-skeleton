@@ -7,6 +7,9 @@ After writing your tests, develop the counter function as needed to pass all you
 
 def counter(name):
     # Todo: implement me
+    name = name.replace(" ", "")
+    if len(name) == 0:
+        raise Exception("Please input your name")
     if isinstance(name, str) and name.isalpha():
         return len(name)
     else:

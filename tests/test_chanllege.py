@@ -15,24 +15,23 @@ class EasyTestCase(unittest.TestCase):
 class MediumTestCase(unittest.TestCase):
     def test_medium_input(self):
         # Todo: make sure that the program raises an exception whenever there is any non-english charts. Ex. !@#$%^.
-        with self.assertRaises(TypeError):
+        with self.assertRaises(Exception):
             self.assertEqual(counter("!@#$%^"), 2)
 
     def test_medium_input_two(self):
         # Todo: make sure that your program does not count paces. It should only count english alpha.
-        with self.assertRaises(TypeError):
-            self.assertEqual(counter("M o t"), 3)
+        self.assertEqual(counter("Resa Nayaba"), 10)
 
 
 class HardTestCase(unittest.TestCase):
     def test_hard_input(self):
         # Todo: make sure that the program raises an exception whenever an empty string is given.
-        with self.assertRaises(TypeError):
+        with self.assertRaises(Exception):
             self.assertEqual(counter(""), 0)
 
     def test_hard_input_two(self):
         # Todo: make sure that your program does not accept a None input.
-        with self.assertRaises(TypeError):
+        with self.assertRaises(Exception):
             self.assertEqual(counter(None), 0)
 
 if __name__ == '__main__':
